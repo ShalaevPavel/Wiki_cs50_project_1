@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Maybe you meant
+{% endblock %}
+
+{% block body %}
+
+    {% for entry in entries %}
+        {% if search_text in entry %}
+            <h1>May be you meant <a href="{% url "title" entry %}">{{ entry }}</a></h1>
+
+        {% endif %}
+
+
+
+    {% endfor %}
+
+{% endblock %}
